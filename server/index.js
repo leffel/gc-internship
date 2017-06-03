@@ -37,6 +37,10 @@ app.get('/calls', function (req, res) {
   }
 })
 
+app.get('/dog', function (req, res) {
+  res.json({dog: '🐶'})
+})
+
 app.listen(3000, function () {
   console.log('server listening on port 3000!')
 })
