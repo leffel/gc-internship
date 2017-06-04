@@ -8,6 +8,8 @@ var postAuthOptions = {
   headers: { 'Content-Type': 'application/json' }
 }
 
+var loginCreds = JSON.stringify({ user: { email: 'user@example.com', password: 'doggo' } })
+
 var authRequest = http.request(postAuthOptions, function (res) {
   console.log('statusCode: ', res.statusCode)
   res.setEncoding('utf8')
@@ -19,5 +21,7 @@ var authRequest = http.request(postAuthOptions, function (res) {
 authRequest.on('error', function (e) {
   console.error(e)
 })
+
+authRequest.write(loginCreds)
 
 authRequest.end()
