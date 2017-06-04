@@ -21,11 +21,11 @@ body {
 #login-zone input,
 #login-zone button {
   display: block;
-  margin: 0em auto 0.85em auto;
   border: 1px solid #000;
 }
 
 #login-zone input {
+  margin: 0em auto 0.85em auto;
   width: 60%;
   padding: 0.25em;
 }
@@ -34,6 +34,8 @@ body {
   background-color: #000;
   color: #fff;
   width: 40%;
+  padding: 0.25em;
+  margin: 1.2em auto;
 }
 
 #login-errors {
