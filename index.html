@@ -11,11 +11,24 @@
     <div id="login-zone">
       <div id="login-errors" hidden>invalid credentials</div>
       <br/>
-      <input id="login-email" type="text" placeholder="email" />
+      <input id="login-email" type="text" placeholder="email" value="user@example.com"/>
       <br/><br/>
-      <input id="login-password" type="text" placeholder="password" />
+      <input id="login-password" type="text" placeholder="password" value="doggo"/>
       <br/><br/>
       <button id="login-submit">login</button>
+    </div>
+
+    <div id="call-zone" hidden>
+      <table id="call-table">
+        <tr>
+          <th>calls</th>
+        </tr>
+        <tr>
+          <th>sid</th>
+          <th>from</th>
+          <th>result</th>
+        </tr>
+      </table>
     </div>
     <script src="bundle.js"></script>
   </body>

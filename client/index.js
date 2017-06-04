@@ -16,6 +16,7 @@ $('#login-submit').click(function () {
       var token = JSON.parse(body).token
       if (token != null) {
         renderCalls(token)
+        $('#login-zone').hide()
       } else {
         $('#login-errors').show()
       }
@@ -29,6 +30,8 @@ $('#login-submit').click(function () {
 })
 
 var renderCalls = function (token) {
+  $('#call-zone').show()
+
   var getCallsOptions = {
     host: 'localhost',
     port: 3000,
@@ -41,8 +44,23 @@ var renderCalls = function (token) {
   var getCallData = http.request(getCallsOptions, function (res) {
     res.setEncoding('utf8')
     res.on('data', function (body) {
-      console.log(body)
+      var callData = JSON.parse(body)
+      fillCallTable(callData)
     })
   })
   getCallData.end()
+
+  var fillCallTable = function (callData) {
+    callData.calls.forEach((call) => {
+      var sid = call.sid
+      var from = call.from
+      var result = call.result
+      var rowHTML = '<tr>' +
+                    '<td>' + sid + '</td>' +
+                    '<td>' + from + '</td>' +
+                    '<td>' + result + '</td>' +
+                    '</tr>'
+      $('#call-table').append(rowHTML)
+    })
+  }
 }
