@@ -6,3 +6,51 @@ html, body {
 body {
   font-family: sans-serif;
 }
+
+#login-zone {
+  width: 20em;
+  height: 12em;
+  border: 1px solid #000;
+  margin: 8em auto;
+}
+
+#login-zone .container {
+  margin: 2.8em auto;
+}
+
+#login-zone input,
+#login-zone button {
+  display: block;
+  margin: 0em auto 0.85em auto;
+  border: 1px solid #000;
+}
+
+#login-zone input {
+  width: 60%;
+  padding: 0.25em;
+}
+
+#login-zone button {
+  background-color: #000;
+  color: #fff;
+  width: 40%;
+}
+
+#login-errors {
+  position: absolute;
+  top: 1.5em;
+  width: 40%;
+  margin: 0 auto;
+  color: #f00;
+  font-style: oblique;
+  text-align: center;
+}
+
+#call-zone {
+  margin: 0 auto;
+}
+
+#call-zone table, th, td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}

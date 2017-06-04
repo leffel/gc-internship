@@ -3,13 +3,7 @@ var $ = require('jQuery')
 
 $('#login-submit').click(function () {
   $('#login-errors').hide()
-  var postAuthOptions = {
-    host: 'localhost',
-    port: 3000,
-    path: '/authenticate',
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' }
-  }
+  var postAuthOptions = { host: 'localhost', port: 3000, path: '/authenticate', method: 'POST', headers: { 'Content-Type': 'application/json' } }
   var authRequest = http.request(postAuthOptions, function (res) {
     res.setEncoding('utf8')
     res.on('data', function (body) {
@@ -32,15 +26,7 @@ $('#login-submit').click(function () {
 var renderCalls = function (token) {
   $('#call-zone').show()
 
-  var getCallsOptions = {
-    host: 'localhost',
-    port: 3000,
-    path: '/calls',
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-TOKEN': token }
-  }
+  var getCallsOptions = { host: 'localhost', port: 3000, path: '/calls', method: 'GET', headers: { 'Content-Type': 'application/json', 'X-TOKEN': token } }
   var getCallData = http.request(getCallsOptions, function (res) {
     res.setEncoding('utf8')
     res.on('data', function (body) {
@@ -52,13 +38,10 @@ var renderCalls = function (token) {
 
   var fillCallTable = function (callData) {
     callData.calls.forEach((call) => {
-      var sid = call.sid
-      var from = call.from
-      var result = call.result
       var rowHTML = '<tr>' +
-                    '<td>' + sid + '</td>' +
-                    '<td>' + from + '</td>' +
-                    '<td>' + result + '</td>' +
+                    '<td>' + call.sid + '</td>' +
+                    '<td>' + call.from + '</td>' +
+                    '<td>' + call.result + '</td>' +
                     '</tr>'
       $('#call-table').append(rowHTML)
     })
