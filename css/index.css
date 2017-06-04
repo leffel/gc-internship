@@ -47,10 +47,26 @@ body {
 }
 
 #call-zone {
-  margin: 0 auto;
+  position: relative;
+  width: 30em;
+  height: 14em;
+  margin: 8em auto;
+}
+
+#call-zone .container {
+  width: 100%;
+  margin: 2.8em auto;
 }
 
 #call-zone table, th, td {
   border: 1px solid #000;
   border-collapse: collapse;
+}
+
+#call-zone table {
+  width: 100%;
+}
+
+#call-zone th, td {
+  padding: 0.25em;
 }
