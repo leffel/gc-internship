@@ -24,8 +24,6 @@ $('#login-submit').click(function () {
 })
 
 var renderCalls = function (token) {
-  $('#call-zone').show()
-
   var getCallsOptions = { host: 'localhost', port: 3000, path: '/calls', method: 'GET', headers: { 'Content-Type': 'application/json', 'X-TOKEN': token } }
   var getCallData = http.request(getCallsOptions, function (res) {
     res.setEncoding('utf8')
@@ -46,4 +44,6 @@ var renderCalls = function (token) {
       $('#call-table').append(rowHTML)
     })
   }
+
+  $('#call-zone').show()
 }
